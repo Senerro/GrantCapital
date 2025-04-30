@@ -1,6 +1,5 @@
 package grand.capital.bank.service;
 
-import grand.capital.bank.domain.dto.CreateUserDTO;
 import grand.capital.bank.domain.dto.EmailDTO;
 import grand.capital.bank.domain.dto.PhoneDTO;
 import grand.capital.bank.domain.dto.UpdateUserDTO;

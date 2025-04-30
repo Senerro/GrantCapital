@@ -25,12 +25,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping
-    public ResponseEntity<User> createUser(@Valid @RequestBody CreateUserDTO createUserDTO) {
-        User createdUser = userService.createUser(createUserDTO);
-        return ResponseEntity.ok(createdUser);
-    }
-
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUserDetails(@PathVariable Long id,
                                                   @Valid @RequestBody UpdateUserDTO updateUserDTO) {
@@ -92,11 +86,6 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-    /**
-     * Эндпоинт поиска пользователей.
-     * Пример запроса:
-     * GET /api/users/search?name=John&email=test@example.com&dateOfBirth=01.01.1990&page=0&size=10
-     */
     @GetMapping("/search")
     public ResponseEntity<Page<User>> searchUsers(
             @RequestParam(value = "name", required = false) String name,

@@ -25,7 +25,6 @@ public class TransferService {
             throw new IllegalArgumentException("Отправитель и получатель не должны совпадать");
         }
 
-        // Выбираем аккаунты с блокировкой для исключения гонок
         Account sender = accountRepository.findByUserIdForUpdate(senderUserId)
                 .orElseThrow(() -> new IllegalArgumentException("Аккаунт отправителя не найден"));
         Account recipient = accountRepository.findByUserIdForUpdate(recipientUserId)

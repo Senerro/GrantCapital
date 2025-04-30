@@ -5,10 +5,12 @@ import grand.capital.bank.domain.model.Phone;
 import grand.capital.bank.domain.model.User;
 import grand.capital.bank.repository.EmailRepository;
 import grand.capital.bank.repository.PhoneRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class AuthenticationService {
 
     @Autowired

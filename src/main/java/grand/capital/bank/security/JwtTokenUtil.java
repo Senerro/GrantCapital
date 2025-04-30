@@ -1,5 +1,6 @@
 package grand.capital.bank.security;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -9,8 +10,8 @@ import java.security.Key;
 import java.util.Date;
 
 @Component
+@RequiredArgsConstructor
 public class JwtTokenUtil {
-    //@Value("")
     private final Key secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS512);
 
     public String createToken(Long userId) {

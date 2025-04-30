@@ -3,19 +3,17 @@ package grand.capital.bank.controller;
 import grand.capital.bank.domain.dto.TransferDTO;
 import grand.capital.bank.service.TransferService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/transfer")
+@RequiredArgsConstructor
 public class TransferController {
 
     private final TransferService transferService;
-
-    public TransferController(TransferService transferService) {
-        this.transferService = transferService;
-    }
 
     @PostMapping
     public ResponseEntity<String> transferFunds(@Valid @RequestBody TransferDTO transferDTO) {
