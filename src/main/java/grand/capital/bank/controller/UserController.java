@@ -32,7 +32,6 @@ public class UserController {
         return ResponseEntity.ok(updatedUser);
     }
 
-    // Добавление нового email
     @PostMapping("/{id}/emails")
     public ResponseEntity<Void> addEmail(@PathVariable Long id,
                                          @Valid @RequestBody EmailDTO email) {
@@ -40,7 +39,6 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-    // Обновление существующего email
     @PutMapping("/{id}/emails/{emailId}")
     public ResponseEntity<Void> updateEmail(@PathVariable Long id,
                                             @PathVariable Long emailId,
@@ -49,7 +47,6 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-    // Удаление email (если у пользователя больше одного)
     @DeleteMapping("/{id}/emails/{emailId}")
     public ResponseEntity<Void> deleteEmail(@PathVariable Long id,
                                             @PathVariable Long emailId) {

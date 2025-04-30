@@ -67,7 +67,6 @@ public class UserService {
 
     @Transactional
     public void updateEmail(Long userId, Long emailId, EmailDTO emailDTO) {
-        // Проверка уникальности нового email
         EmailRepository.findByEmail(emailDTO.getEmail()).ifPresent(ed -> {
             if (!ed.getUser().getId().equals(userId)) {
                 throw new IllegalArgumentException("Указанный Email уже используется другим пользователем");
